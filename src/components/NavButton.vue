@@ -1,36 +1,35 @@
 <template>
     <div class="nav_btn">
         <div class="btn_left">
-            <a href="">
+            <a @click="goTo('/')">
                 <div class="btn_list listActive">系统首页</div>
             </a>
-            <a href="https://github.com/ecomfe/vue-echarts#readme">
+            <a @click="goTo('/WaterArea')">
                 <div class="btn_list">积水地带</div>
             </a>
-            <a href="https://vue-echarts.dev/">
+            <a @click="goTo('./EmergencyRescue')">
                 <div class="btn_list">应急抢险</div>
             </a>
-            <a href="">
+            <a @click="goTo('./DynamicEmulation')">
                 <div class="btn_list">动态仿真</div>
             </a>
         </div>
         <div class="btn_right">
-            <!-- <a href="https://gitee.com/iGaoWei/big-data-view">
-                <div class="btn_list">应急抢险</div>
-            </a>
-            <a href="https://gitee.com/iGaoWei/big-data-view">
-                <div class="btn_list">动态仿真</div>
-            </a> -->
-            <!-- <a href="https://gitee.com/iGaoWei/big-data-view">
-                <div class="btn_list">流通销售</div>
-            </a>
-            <a href="https://gitee.com/iGaoWei/big-data-view">
-                <div class="btn_list">数据中心</div>
-            </a> -->
         </div>
     </div>
 </template>
-  
+
+<script>
+export default {
+  methods: {
+  goTo(route) {
+    if (this.$route.path !== route) {
+      this.$router.push(route);
+    }
+  }
+}
+};
+</script>  
   
 <style>
 
